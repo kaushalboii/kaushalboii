@@ -23,7 +23,7 @@
 <td width="55%">
 
 ```
-  Kaushal — Mobile Application Developer
+  M Kaushal Maran — Mobile Application Developer
 
   ◈  Crafting production-grade iOS & Android apps
   ◈  Fluent in SwiftUI, Kotlin & Jetpack Compose
