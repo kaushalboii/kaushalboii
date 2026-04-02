@@ -1,5 +1,5 @@
 <div align="center">
-
+  
 <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:060a18,40:0d1433,100:060a18&height=220&section=header&text=KAUSHAL%20MARAN&fontSize=52&fontColor=c9a84c&fontAlignY=50&desc=Mobile%20Application%20Developer&descSize=16&descColor=5c6bc0&descAlignY=68&animation=fadeIn&stroke=c9a84c&strokeWidth=0.4" width="100%"/>
 
 <br/>
