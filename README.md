@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:060a18,40:0d1433,100:060a18&height=220&section=header&text=KAUSHAL%20MARAN&fontSize=52&fontColor=c9a84c&fontAlignY=50&desc=Mobile%20Application%20Developer&descSize=16&descColor=5c6bc0&descAlignY=68&animation=fadeIn&stroke=c9a84c&strokeWidth=0.4" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:060a18,40:0d1433,100:060a18&height=200&section=header&text=KAUSHAL%20MARAN&fontSize=50&fontColor=c9a84c&fontAlignY=50&desc=Mobile%20Application%20Developer&descSize=15&descColor=5c6bc0&descAlignY=68&animation=fadeIn" width="100%"/>
 
 <br/>
 
@@ -12,19 +12,17 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Cinzel&weight=500&size=14&duration=3000&pause=800&color=C9A84C&center=true&vCenter=true&width=680&lines=Mobile+Engineer+%E2%80%94+iOS+%26+Android;SwiftUI+%C2%B7+Kotlin+%C2%B7+Jetpack+Compose;10%2B+Android+Applications+%C2%B7+2+iOS+Applications;Architecture-first+%C2%B7+Design-obsessed+%C2%B7+Always+shipping" alt="Typing SVG"/>
 
+<br/>
+
 </div>
 
 ---
 
 ## 🏛 &nbsp; About
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
 I am a **Mobile Application Developer** specialising in native iOS and Android development. My work spans the full product lifecycle — from translating Figma designs into pixel-perfect interfaces to shipping production-ready applications on both major platforms.
 
-I care deeply about clean architecture, intuitive user experience, and writing code that scales. Every application I build is engineered with precision and delivered with pride.
+I care deeply about **clean architecture**, intuitive user experience, and writing code that scales. Every application I build is engineered with precision and delivered with pride.
 
 <br/>
 
@@ -35,19 +33,6 @@ I care deeply about clean architecture, intuitive user experience, and writing c
 | 🚀 **Shipped** | 10+ Android · 2 iOS Apps |
 | 📐 **Workflow** | Figma → Code → Production |
 | 🌱 **Mode** | Continuous Learning |
-
-</td>
-<td width="50%" align="center" valign="top">
-
-<img src="https://github-readme-stats.vercel.app/api?username=kaushalboii&show_icons=true&hide_border=true&title_color=c9a84c&icon_color=c9a84c&text_color=7986cb&bg_color=060a18&ring_color=3949ab&border_radius=12&include_all_commits=true&count_private=true" width="100%"/>
-
-<br/>
-
-<img src="https://streak-stats.demolab.com?user=kaushalboii&hide_border=true&ring=c9a84c&fire=c9a84c&currStreakLabel=c9a84c&sideLabels=7986cb&dates=7986cb&background=060a18&stroke=3949ab&border_radius=12" width="100%"/>
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -70,19 +55,19 @@ I care deeply about clean architecture, intuitive user experience, and writing c
 
 **— Architecture & Patterns —**
 
-![MVVM](https://img.shields.io/badge/MVVM-060a18?style=for-the-badge&logoColor=c9a84c)
-![Clean Architecture](https://img.shields.io/badge/Clean%20Architecture-060a18?style=for-the-badge&logoColor=c9a84c)
+![MVVM](https://img.shields.io/badge/MVVM-060a18?style=for-the-badge)
+![Clean Architecture](https://img.shields.io/badge/Clean%20Architecture-060a18?style=for-the-badge)
 ![Coroutines](https://img.shields.io/badge/Coroutines-060a18?style=for-the-badge&logo=kotlin&logoColor=c9a84c)
 ![REST APIs](https://img.shields.io/badge/REST%20APIs-060a18?style=for-the-badge&logo=postman&logoColor=c9a84c)
-![Dependency Injection](https://img.shields.io/badge/Dependency%20Injection-060a18?style=for-the-badge&logoColor=c9a84c)
+![Dependency Injection](https://img.shields.io/badge/Dependency%20Injection-060a18?style=for-the-badge)
 
 <br/>
 
 **— Design & Tooling —**
 
 ![Figma](https://img.shields.io/badge/Figma-060a18?style=for-the-badge&logo=figma&logoColor=c9a84c)
-![Xcode](https://img.shields.io/badge/Xcode-060a18?style=for-the-badge&logo=xcode&logoColor=c9a84c)
-![Android Studio](https://img.shields.io/badge/Android%20Studio-060a18?style=for-the-badge&logo=androidstudio&logoColor=c9a84c)
+![Xcode](https://img.shields.io/badge/Xcode-060a18?style=for-the-badge&logo=apple&logoColor=c9a84c)
+![Android Studio](https://img.shields.io/badge/Android%20Studio-060a18?style=for-the-badge&logo=android&logoColor=c9a84c)
 ![Git](https://img.shields.io/badge/Git-060a18?style=for-the-badge&logo=git&logoColor=c9a84c)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-060a18?style=for-the-badge&logo=githubactions&logoColor=c9a84c)
 
@@ -102,7 +87,15 @@ I care deeply about clean architecture, intuitive user experience, and writing c
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kaushalboii&layout=compact&hide_border=true&title_color=c9a84c&text_color=7986cb&bg_color=060a18&border_radius=12&langs_count=8" width="380"/>
+<br/>
+
+<img src="https://github-readme-stats.vercel.app/api?username=kaushalboii&show_icons=true&hide_border=true&title_color=c9a84c&icon_color=c9a84c&text_color=7986cb&bg_color=060a18&ring_color=3949ab&border_radius=12&include_all_commits=true&count_private=true&cache_seconds=86400" height="160"/>
+&nbsp;&nbsp;
+<img src="https://streak-stats.demolab.com?user=kaushalboii&hide_border=true&ring=c9a84c&fire=c9a84c&currStreakLabel=c9a84c&sideLabels=7986cb&dates=7986cb&background=060a18&stroke=3949ab&border_radius=12" height="160"/>
+
+<br/><br/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kaushalboii&layout=compact&hide_border=true&title_color=c9a84c&text_color=7986cb&bg_color=060a18&border_radius=12&langs_count=8&cache_seconds=86400" height="140"/>
 
 </div>
 
@@ -116,9 +109,9 @@ I care deeply about clean architecture, intuitive user experience, and writing c
 
 | Platform | Applications Shipped | Status |
 |:---:|:---:|:---:|
-| 🤖 &nbsp; **Android** | **10+ Applications** | ![Live](https://img.shields.io/badge/LIVE-060a18?style=flat-square&labelColor=060a18&color=c9a84c) |
-| 🍎 &nbsp; **iOS** | **2 Applications** | ![Live](https://img.shields.io/badge/LIVE-060a18?style=flat-square&labelColor=060a18&color=c9a84c) |
-| ⚙️ &nbsp; **System Health** | All Systems Operational | ![Stable](https://img.shields.io/badge/STABLE-060a18?style=flat-square&labelColor=060a18&color=3949ab) |
+| 🤖 &nbsp; **Android** | **10+ Applications** | ![Live](https://img.shields.io/badge/LIVE-c9a84c?style=flat-square&labelColor=060a18) |
+| 🍎 &nbsp; **iOS** | **2 Applications** | ![Live](https://img.shields.io/badge/LIVE-c9a84c?style=flat-square&labelColor=060a18) |
+| ⚙️ &nbsp; **System Health** | All Systems Operational | ![Stable](https://img.shields.io/badge/STABLE-3949ab?style=flat-square&labelColor=060a18) |
 
 <br/>
 
@@ -148,4 +141,4 @@ I care deeply about clean architecture, intuitive user experience, and writing c
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:060a18,40:0d1433,100:060a18&height=100&section=footer&reversal=true&stroke=c9a84c&strokeWidth=0.4" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:060a18,40:0d1433,100:060a18&height=100&section=footer&reversal=true" width="100%"/>
