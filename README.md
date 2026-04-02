@@ -4,15 +4,13 @@
 
 <br/>
 
-[![Profile Views](https://komarev.com/ghpvc/?username=kaushalboii&color=c9a84c&style=for-the-badge&label=PROFILE+VIEWS)](https://github.com/kaushalboii)
+![Profile Views](https://komarev.com/ghpvc/?username=kaushalboii&color=c9a84c&style=for-the-badge&label=PROFILE+VIEWS)
 &nbsp;
-[![GitHub followers](https://img.shields.io/github/followers/kaushalboii?style=for-the-badge&logo=github&logoColor=c9a84c&labelColor=060a18&color=c9a84c&label=FOLLOWERS)](https://github.com/kaushalboii)
+![Followers](https://img.shields.io/github/followers/kaushalboii?style=for-the-badge&logo=github&logoColor=c9a84c&labelColor=060a18&color=c9a84c&label=FOLLOWERS)
 
 <br/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Cinzel&weight=500&size=14&duration=3000&pause=800&color=C9A84C&center=true&vCenter=true&width=680&lines=Mobile+Engineer+%E2%80%94+iOS+%26+Android;SwiftUI+%C2%B7+Kotlin+%C2%B7+Jetpack+Compose;10%2B+Android+Applications+%C2%B7+2+iOS+Applications;Architecture-first+%C2%B7+Design-obsessed+%C2%B7+Always+shipping" alt="Typing SVG"/>
-
-<br/>
 
 </div>
 
@@ -43,6 +41,8 @@ I care deeply about clean architecture, intuitive user experience, and writing c
 
 <img src="https://github-readme-stats.vercel.app/api?username=kaushalboii&show_icons=true&hide_border=true&title_color=c9a84c&icon_color=c9a84c&text_color=7986cb&bg_color=060a18&ring_color=3949ab&border_radius=12&include_all_commits=true&count_private=true" width="100%"/>
 
+<br/>
+
 <img src="https://streak-stats.demolab.com?user=kaushalboii&hide_border=true&ring=c9a84c&fire=c9a84c&currStreakLabel=c9a84c&sideLabels=7986cb&dates=7986cb&background=060a18&stroke=3949ab&border_radius=12" width="100%"/>
 
 </td>
@@ -70,11 +70,11 @@ I care deeply about clean architecture, intuitive user experience, and writing c
 
 **— Architecture & Patterns —**
 
-![MVVM](https://img.shields.io/badge/MVVM-060a18?style=for-the-badge&logo=databricks&logoColor=c9a84c)
-![Clean Architecture](https://img.shields.io/badge/Clean%20Architecture-060a18?style=for-the-badge&logo=abstract&logoColor=c9a84c)
+![MVVM](https://img.shields.io/badge/MVVM-060a18?style=for-the-badge&logoColor=c9a84c)
+![Clean Architecture](https://img.shields.io/badge/Clean%20Architecture-060a18?style=for-the-badge&logoColor=c9a84c)
 ![Coroutines](https://img.shields.io/badge/Coroutines-060a18?style=for-the-badge&logo=kotlin&logoColor=c9a84c)
-![REST APIs](https://img.shields.io/badge/REST%20APIs-060a18?style=for-the-badge&logo=fastapi&logoColor=c9a84c)
-![Dependency Injection](https://img.shields.io/badge/Dependency%20Injection-060a18?style=for-the-badge&logo=diagrams.net&logoColor=c9a84c)
+![REST APIs](https://img.shields.io/badge/REST%20APIs-060a18?style=for-the-badge&logo=postman&logoColor=c9a84c)
+![Dependency Injection](https://img.shields.io/badge/Dependency%20Injection-060a18?style=for-the-badge&logoColor=c9a84c)
 
 <br/>
 
@@ -102,9 +102,7 @@ I care deeply about clean architecture, intuitive user experience, and writing c
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kaushalboii&layout=compact&hide_border=true&title_color=c9a84c&text_color=7986cb&bg_color=060a18&border_radius=12&langs_count=8" height="145"/>
-&nbsp;&nbsp;
-<img src="https://github-profile-trophy.vercel.app/?username=kaushalboii&theme=darkhub&no-frame=true&no-bg=true&margin-w=6&column=4" height="145"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kaushalboii&layout=compact&hide_border=true&title_color=c9a84c&text_color=7986cb&bg_color=060a18&border_radius=12&langs_count=8" width="380"/>
 
 </div>
 
@@ -118,9 +116,9 @@ I care deeply about clean architecture, intuitive user experience, and writing c
 
 | Platform | Applications Shipped | Status |
 |:---:|:---:|:---:|
-| 🤖 &nbsp; **Android** | **10+ Applications** | ![Live](https://img.shields.io/badge/LIVE-c9a84c?style=flat-square&labelColor=060a18) |
-| 🍎 &nbsp; **iOS** | **2 Applications** | ![Live](https://img.shields.io/badge/LIVE-c9a84c?style=flat-square&labelColor=060a18) |
-| ⚙️ &nbsp; **System Health** | All Systems Operational | ![Stable](https://img.shields.io/badge/STABLE-3949ab?style=flat-square&labelColor=060a18) |
+| 🤖 &nbsp; **Android** | **10+ Applications** | ![Live](https://img.shields.io/badge/LIVE-060a18?style=flat-square&labelColor=060a18&color=c9a84c) |
+| 🍎 &nbsp; **iOS** | **2 Applications** | ![Live](https://img.shields.io/badge/LIVE-060a18?style=flat-square&labelColor=060a18&color=c9a84c) |
+| ⚙️ &nbsp; **System Health** | All Systems Operational | ![Stable](https://img.shields.io/badge/STABLE-060a18?style=flat-square&labelColor=060a18&color=3949ab) |
 
 <br/>
 
@@ -140,7 +138,7 @@ I care deeply about clean architecture, intuitive user experience, and writing c
 &nbsp;
 [![Gmail](https://img.shields.io/badge/kaushalmaran%40gmail.com-060a18?style=for-the-badge&logo=gmail&logoColor=c9a84c)](mailto:kaushalmaran@gmail.com)
 &nbsp;
-[![Phone](https://img.shields.io/badge/%2B91%2086108%2051456-060a18?style=for-the-badge&logo=whatsapp&logoColor=c9a84c)](tel:+918610851456)
+[![WhatsApp](https://img.shields.io/badge/%2B91%2086108%2051456-060a18?style=for-the-badge&logo=whatsapp&logoColor=c9a84c)](tel:+918610851456)
 
 <br/><br/>
 
