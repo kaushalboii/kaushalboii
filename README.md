@@ -84,12 +84,12 @@
   <a href="https://www.linkedin.com/in/kaushal-maran-m-9572622b1?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
     <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
   </a>
-  <img src="https://img.shields.io/static/v1?message=kaushal__maran&logo=discord&color=7289DA&logoColor=white&style=for-the-badge" height="25" />
+  <img src="https://img.shields.io/badge/kaushal__maran-7289DA?logo=discord&logoColor=white&style=for-the-badge" height="25"/>
   <a href="mailto:kaushalmaran@gmail.com">
-  <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&color=D14836&logoColor=white&style=for-the-badge" height="25" alt="gmail logo" />
+  <img src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white&style=for-the-badge" height="25"/>
   </a>
   <a href="https://www.instagram.com/kaushal__maran?igsh=ZWNzMGk5cGJoZWZ5" target="_blank">
-  <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&color=E4405F&logoColor=white&style=for-the-badge" height="25" alt="instagram logo" />
+  <img src="https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=white&style=for-the-badge" height="25"/>
 </a>
 </div>
 
