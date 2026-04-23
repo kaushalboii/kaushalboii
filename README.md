@@ -122,7 +122,6 @@
   <img width="20"/>
   <img height="180" src="https://i.imgflip.com/65efzo.gif"/>
   <img width="20"/>
-  <img height="180" src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif"/>
 </div>
 
 ###
