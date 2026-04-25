@@ -3,7 +3,7 @@ name: Generate pacman animation
 on:
   schedule: # execute every 5 min
   - cron: "*/5 * * * *"
-
+ 
   workflow_dispatch:
 
   push:
