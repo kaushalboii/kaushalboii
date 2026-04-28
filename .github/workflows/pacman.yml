@@ -1,5 +1,5 @@
 name: Generate pacman animation
- 
+  
 on:
   schedule: # execute every 5 min
   - cron: "*/5 * * * *"
