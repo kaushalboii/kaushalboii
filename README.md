@@ -120,6 +120,8 @@
 <div align="center">
   <img height="180" src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif"/>
   <img width="20"/>
+  <img height="180" alt="Gemini_Generated_Image_i5d85gi5d85gi5d8" src="https://github.com/user-attachments/assets/8f848d04-1d07-4785-becd-2543f6177a68" />
+  <img width="20"/>
   <img height="180" src="https://i.imgflip.com/65efzo.gif"/>
   <img width="20"/>
 </div>
