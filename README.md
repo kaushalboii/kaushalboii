@@ -1,7 +1,7 @@
 <br clear="both">
  
 <h1 align="center">
-  Hey 😉 !!! Its Me Kaushal Maran!! What's Up?
+  Hey 😉 !!! Its Me Kaushal Maran!!
   <img src="https://raw.githubusercontent.com/sindresorhus/sindresorhus/main/cat-typing.gif" width="35px" />
 </h1>
 
