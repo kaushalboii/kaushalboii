@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="530" viewBox="0 0 860 530" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#111722"/>
+    <stop offset="100%" stop-color="#0d1117"/>
+  </linearGradient>
+  <linearGradient id="card-grad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#19202c"/>
+    <stop offset="100%" stop-color="#131922"/>
+  </linearGradient>
+</defs>
+<style>
+  .card { opacity: 0; animation: slideIn 0.5s ease-out forwards; }
+  .pulse { animation: blink 2s infinite ease-in-out; }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card, .pulse { animation: none !important; opacity: 1 !important; }
+  }
+</style>
+
+<!-- Terminal Window Background -->
+<rect width="860" height="530" rx="12" fill="url(#bg)"/>
+<rect x="0.5" y="0.5" width="859" height="529" rx="12" fill="none" stroke="#30363d" stroke-width="1"/>
+
+<!-- Titlebar -->
+<line x1="0" y1="32" x2="860" y2="32" stroke="#30363d"/>
+<circle cx="20" cy="16" r="5" fill="#ff5f56"/>
+<circle cx="36" cy="16" r="5" fill="#ffbd2e"/>
+<circle cx="52" cy="16" r="5" fill="#27c93f"/>
+<text x="430.0" y="20" fill="#7d8590" font-size="12" text-anchor="middle">kaushal@github: ~$ ./building-blocks.sh --status=active</text>
+
+<!-- Sub-header status ribbon -->
+<g class="card" style="animation-delay: 0.05s;">
+  <circle cx="26" cy="53" r="4" fill="#39d353" class="pulse"/>
+  <text x="36" y="57" fill="#39d353" font-size="11" font-weight="700">SYSTEM: ACTIVE</text>
+  <text x="160" y="57" fill="#7d8590" font-size="11">● NODES: 4/4 INITIALIZED</text>
+  <text x="340" y="57" fill="#7d8590" font-size="11">● ECOSYSTEM: CREATIVE COMMUNITY LABS</text>
+  <text x="836" y="57" fill="#22d3ee" font-size="11" text-anchor="end">BUILD VERSION: 2026.11</text>
+  <line x1="20" y1="68" x2="840" y2="68" stroke="#21262d" stroke-dasharray="3,3"/>
+</g>
+
+<!-- Card 01 -->
+<g class="card" style="animation-delay: 0.15s;">
+  <rect x="22" y="80" width="398" height="178" rx="10" fill="url(#card-grad)" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Card Header -->
+  <text x="40" y="108" fill="#7d8590" font-size="12" font-weight="700">[01]</text>
+  <text x="68" y="108" fill="#e6edf3" font-size="13" font-weight="700">MOBILE ARCHITECTURE</text>
+  
+  <!-- Badge Pill -->
+  <rect x="219.0" y="94" width="183.0" height="20" rx="10" fill="rgba(34, 211, 238, 0.12)" stroke="#22d3ee" stroke-width="0.8"/>
+  <text x="310.5" y="108" fill="#22d3ee" font-size="9.5" font-weight="700" text-anchor="middle">SWIFTUI · FLUTTER · KOTLIN</text>
+
+  <line x1="38" y1="122" x2="404" y2="122" stroke="#21262d"/>
+  
+  <!-- Tree Lines -->
+  <text x="40" y="146" fill="#39d353" font-size="12">├──</text>
+  <text x="70" y="146" fill="#c9d1d9" font-size="12">SwiftUI Native & Jetpack Compose</text>
+  <text x="40" y="170" fill="#39d353" font-size="12">├──</text>
+  <text x="70" y="170" fill="#c9d1d9" font-size="12">Kinetic Motion & Micro-Interactions</text>
+  <text x="40" y="194" fill="#39d353" font-size="12">└──</text>
+  <text x="70" y="194" fill="#c9d1d9" font-size="12">Offline-First State & Sync Engines</text>
+
+  <!-- Card Footer -->
+  <rect x="38" y="226" width="366" height="22" rx="5" fill="#0d1117" stroke="#21262d"/>
+  <text x="48" y="240" fill="#7d8590" font-size="10">DEPLOYMENTS:</text>
+  <text x="137" y="240" fill="#39d353" font-size="10" font-weight="700">12+ Apps Shipped</text>
+  <text x="394" y="240" fill="#22d3ee" font-size="10" text-anchor="end">READY</text>
+</g>
+
+<!-- Card 02 -->
+<g class="card" style="animation-delay: 0.25s;">
+  <rect x="440" y="80" width="398" height="178" rx="10" fill="url(#card-grad)" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Card Header -->
+  <text x="458" y="108" fill="#7d8590" font-size="12" font-weight="700">[02]</text>
+  <text x="486" y="108" fill="#e6edf3" font-size="13" font-weight="700">INTELLIGENT AGENTS</text>
+  
+  <!-- Badge Pill -->
+  <rect x="643.5" y="94" width="176.5" height="20" rx="10" fill="rgba(57, 211, 83, 0.12)" stroke="#39d353" stroke-width="0.8"/>
+  <text x="731.75" y="108" fill="#39d353" font-size="9.5" font-weight="700" text-anchor="middle">PYTHON · AGENTS · FASTAPI</text>
+
+  <line x1="456" y1="122" x2="822" y2="122" stroke="#21262d"/>
+  
+  <!-- Tree Lines -->
+  <text x="458" y="146" fill="#39d353" font-size="12">├──</text>
+  <text x="488" y="146" fill="#c9d1d9" font-size="12">Autonomous LLM Workflow Loops</text>
+  <text x="458" y="170" fill="#39d353" font-size="12">├──</text>
+  <text x="488" y="170" fill="#c9d1d9" font-size="12">Dynamic SVG & Canvas Generators</text>
+  <text x="458" y="194" fill="#39d353" font-size="12">└──</text>
+  <text x="488" y="194" fill="#c9d1d9" font-size="12">Multimodal Context & Vision Tools</text>
+
+  <!-- Card Footer -->
+  <rect x="456" y="226" width="366" height="22" rx="5" fill="#0d1117" stroke="#21262d"/>
+  <text x="466" y="240" fill="#7d8590" font-size="10">CAPABILITY:</text>
+  <text x="555" y="240" fill="#39d353" font-size="10" font-weight="700">System Automations</text>
+  <text x="812" y="240" fill="#22d3ee" font-size="10" text-anchor="end">READY</text>
+</g>
+
+<!-- Card 03 -->
+<g class="card" style="animation-delay: 0.35s;">
+  <rect x="22" y="274" width="398" height="178" rx="10" fill="url(#card-grad)" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Card Header -->
+  <text x="40" y="302" fill="#7d8590" font-size="12" font-weight="700">[03]</text>
+  <text x="68" y="302" fill="#e6edf3" font-size="13" font-weight="700">FULL-STACK & SYSTEMS</text>
+  
+  <!-- Badge Pill -->
+  <rect x="232.0" y="288" width="170.0" height="20" rx="10" fill="rgba(34, 211, 238, 0.12)" stroke="#22d3ee" stroke-width="0.8"/>
+  <text x="317.0" y="302" fill="#22d3ee" font-size="9.5" font-weight="700" text-anchor="middle">NODE · DOCKER · POSTGRES</text>
+
+  <line x1="38" y1="316" x2="404" y2="316" stroke="#21262d"/>
+  
+  <!-- Tree Lines -->
+  <text x="40" y="340" fill="#39d353" font-size="12">├──</text>
+  <text x="70" y="340" fill="#c9d1d9" font-size="12">High-Throughput Microservices</text>
+  <text x="40" y="364" fill="#39d353" font-size="12">├──</text>
+  <text x="70" y="364" fill="#c9d1d9" font-size="12">PostgreSQL & Redis Event Streams</text>
+  <text x="40" y="388" fill="#39d353" font-size="12">└──</text>
+  <text x="70" y="388" fill="#c9d1d9" font-size="12">Dockerized Container Deployments</text>
+
+  <!-- Card Footer -->
+  <rect x="38" y="420" width="366" height="22" rx="5" fill="#0d1117" stroke="#21262d"/>
+  <text x="48" y="434" fill="#7d8590" font-size="10">ARCHITECTURE:</text>
+  <text x="137" y="434" fill="#39d353" font-size="10" font-weight="700">Distributed & Scalable</text>
+  <text x="394" y="434" fill="#22d3ee" font-size="10" text-anchor="end">READY</text>
+</g>
+
+<!-- Card 04 -->
+<g class="card" style="animation-delay: 0.45s;">
+  <rect x="440" y="274" width="398" height="178" rx="10" fill="url(#card-grad)" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Card Header -->
+  <text x="458" y="302" fill="#7d8590" font-size="12" font-weight="700">[04]</text>
+  <text x="486" y="302" fill="#e6edf3" font-size="13" font-weight="700">CREATIVE COMMUNITY LAB</text>
+  
+  <!-- Badge Pill -->
+  <rect x="676.0" y="288" width="144.0" height="20" rx="10" fill="rgba(242, 204, 96, 0.12)" stroke="#f2cc60" stroke-width="0.8"/>
+  <text x="748.0" y="302" fill="#f2cc60" font-size="9.5" font-weight="700" text-anchor="middle">OPEN SOURCE · COLLAB</text>
+
+  <line x1="456" y1="316" x2="822" y2="316" stroke="#21262d"/>
+  
+  <!-- Tree Lines -->
+  <text x="458" y="340" fill="#39d353" font-size="12">├──</text>
+  <text x="488" y="340" fill="#c9d1d9" font-size="12">Modular UI Kits & Interactive Specs</text>
+  <text x="458" y="364" fill="#39d353" font-size="12">├──</text>
+  <text x="488" y="364" fill="#c9d1d9" font-size="12">Storytelling through Code & Motion</text>
+  <text x="458" y="388" fill="#39d353" font-size="12">└──</text>
+  <text x="488" y="388" fill="#c9d1d9" font-size="12">Building in Public & Developer Culture</text>
+
+  <!-- Card Footer -->
+  <rect x="456" y="420" width="366" height="22" rx="5" fill="#0d1117" stroke="#21262d"/>
+  <text x="466" y="434" fill="#7d8590" font-size="10">COMMUNITY:</text>
+  <text x="555" y="434" fill="#39d353" font-size="10" font-weight="700">Open Collaboration</text>
+  <text x="812" y="434" fill="#22d3ee" font-size="10" text-anchor="end">READY</text>
+</g>
+
+<!-- Bottom Mission Banner -->
+<g class="card" style="animation-delay: 0.55s;">
+  <rect x="22" y="474" width="816" height="36" rx="8" fill="#0b0e14" stroke="#30363d"/>
+  <text x="36" y="496" fill="#39d353" font-size="11.5" font-weight="700">kaushal@github:~$</text>
+  <text x="175" y="496" fill="#7d8590" font-size="11.5">echo $COMMUNITY_MISSION</text>
+  <text x="360" y="496" fill="#e6edf3" font-size="11.5">"Blending design, AI, and code to empower human experiences."</text>
+  <circle cx="822" cy="492" r="3" fill="#22d3ee" class="pulse"/>
+</g>
+
+</svg>
