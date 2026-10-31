@@ -10,18 +10,18 @@
   </linearGradient>
 </defs>
 <style>
-  .card { opacity: 0; animation: slideIn 0.5s ease-out forwards; }
+  .card { opacity: 0; animation: in 0.45s ease-out both; }
   .pulse { animation: blink 2s infinite ease-in-out; }
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+  @keyframes in {
+    0% { opacity: 0; transform: translateY(14px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
   @keyframes blink {
     0%, 100% { opacity: 0.35; }
     50% { opacity: 1; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .card, .pulse { animation: none !important; opacity: 1 !important; }
+    .card, .pulse { animation: none !important; opacity: 1 !important; transform: none !important; }
   }
 </style>
 
@@ -62,11 +62,11 @@
   
   <!-- Tree Lines -->
   <text x="40" y="146" fill="#39d353" font-size="12">├──</text>
-  <text x="70" y="146" fill="#c9d1d9" font-size="12">SwiftUI Native & Jetpack Compose</text>
+  <text x="70" y="146" fill="#c9d1d9" font-size="12">SwiftUI Native &amp; Jetpack Compose</text>
   <text x="40" y="170" fill="#39d353" font-size="12">├──</text>
-  <text x="70" y="170" fill="#c9d1d9" font-size="12">Kinetic Motion & Micro-Interactions</text>
+  <text x="70" y="170" fill="#c9d1d9" font-size="12">Kinetic Motion &amp; Micro-Interactions</text>
   <text x="40" y="194" fill="#39d353" font-size="12">└──</text>
-  <text x="70" y="194" fill="#c9d1d9" font-size="12">Offline-First State & Sync Engines</text>
+  <text x="70" y="194" fill="#c9d1d9" font-size="12">Offline-First State &amp; Sync Engines</text>
 
   <!-- Card Footer -->
   <rect x="38" y="226" width="366" height="22" rx="5" fill="#0d1117" stroke="#21262d"/>
@@ -93,9 +93,9 @@
   <text x="458" y="146" fill="#39d353" font-size="12">├──</text>
   <text x="488" y="146" fill="#c9d1d9" font-size="12">Autonomous LLM Workflow Loops</text>
   <text x="458" y="170" fill="#39d353" font-size="12">├──</text>
-  <text x="488" y="170" fill="#c9d1d9" font-size="12">Dynamic SVG & Canvas Generators</text>
+  <text x="488" y="170" fill="#c9d1d9" font-size="12">Dynamic SVG &amp; Canvas Generators</text>
   <text x="458" y="194" fill="#39d353" font-size="12">└──</text>
-  <text x="488" y="194" fill="#c9d1d9" font-size="12">Multimodal Context & Vision Tools</text>
+  <text x="488" y="194" fill="#c9d1d9" font-size="12">Multimodal Context &amp; Vision Tools</text>
 
   <!-- Card Footer -->
   <rect x="456" y="226" width="366" height="22" rx="5" fill="#0d1117" stroke="#21262d"/>
@@ -110,7 +110,7 @@
   
   <!-- Card Header -->
   <text x="40" y="302" fill="#7d8590" font-size="12" font-weight="700">[03]</text>
-  <text x="68" y="302" fill="#e6edf3" font-size="13" font-weight="700">FULL-STACK & SYSTEMS</text>
+  <text x="68" y="302" fill="#e6edf3" font-size="13" font-weight="700">FULL-STACK &amp; SYSTEMS</text>
   
   <!-- Badge Pill -->
   <rect x="232.0" y="288" width="170.0" height="20" rx="10" fill="rgba(34, 211, 238, 0.12)" stroke="#22d3ee" stroke-width="0.8"/>
@@ -122,14 +122,14 @@
   <text x="40" y="340" fill="#39d353" font-size="12">├──</text>
   <text x="70" y="340" fill="#c9d1d9" font-size="12">High-Throughput Microservices</text>
   <text x="40" y="364" fill="#39d353" font-size="12">├──</text>
-  <text x="70" y="364" fill="#c9d1d9" font-size="12">PostgreSQL & Redis Event Streams</text>
+  <text x="70" y="364" fill="#c9d1d9" font-size="12">PostgreSQL &amp; Redis Event Streams</text>
   <text x="40" y="388" fill="#39d353" font-size="12">└──</text>
   <text x="70" y="388" fill="#c9d1d9" font-size="12">Dockerized Container Deployments</text>
 
   <!-- Card Footer -->
   <rect x="38" y="420" width="366" height="22" rx="5" fill="#0d1117" stroke="#21262d"/>
   <text x="48" y="434" fill="#7d8590" font-size="10">ARCHITECTURE:</text>
-  <text x="137" y="434" fill="#39d353" font-size="10" font-weight="700">Distributed & Scalable</text>
+  <text x="137" y="434" fill="#39d353" font-size="10" font-weight="700">Distributed &amp; Scalable</text>
   <text x="394" y="434" fill="#22d3ee" font-size="10" text-anchor="end">READY</text>
 </g>
 
@@ -149,11 +149,11 @@
   
   <!-- Tree Lines -->
   <text x="458" y="340" fill="#39d353" font-size="12">├──</text>
-  <text x="488" y="340" fill="#c9d1d9" font-size="12">Modular UI Kits & Interactive Specs</text>
+  <text x="488" y="340" fill="#c9d1d9" font-size="12">Modular UI Kits &amp; Interactive Specs</text>
   <text x="458" y="364" fill="#39d353" font-size="12">├──</text>
-  <text x="488" y="364" fill="#c9d1d9" font-size="12">Storytelling through Code & Motion</text>
+  <text x="488" y="364" fill="#c9d1d9" font-size="12">Storytelling through Code &amp; Motion</text>
   <text x="458" y="388" fill="#39d353" font-size="12">└──</text>
-  <text x="488" y="388" fill="#c9d1d9" font-size="12">Building in Public & Developer Culture</text>
+  <text x="488" y="388" fill="#c9d1d9" font-size="12">Building in Public &amp; Developer Culture</text>
 
   <!-- Card Footer -->
   <rect x="456" y="420" width="366" height="22" rx="5" fill="#0d1117" stroke="#21262d"/>
@@ -167,7 +167,7 @@
   <rect x="22" y="474" width="816" height="36" rx="8" fill="#0b0e14" stroke="#30363d"/>
   <text x="36" y="496" fill="#39d353" font-size="11.5" font-weight="700">kaushal@github:~$</text>
   <text x="175" y="496" fill="#7d8590" font-size="11.5">echo $COMMUNITY_MISSION</text>
-  <text x="360" y="496" fill="#e6edf3" font-size="11.5">"Blending design, AI, and code to empower human experiences."</text>
+  <text x="360" y="496" fill="#e6edf3" font-size="11.5">&quot;Blending design, AI, and code to empower human experiences.&quot;</text>
   <circle cx="822" cy="492" r="3" fill="#22d3ee" class="pulse"/>
 </g>
 

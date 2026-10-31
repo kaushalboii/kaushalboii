@@ -10,6 +10,7 @@ Palette: #0d1117 (bg), #111722 (bg2), #161b22 (tile), #30363d (frame),
 Usage:
     python scripts/render_blocks_svg.py [output.svg]
 """
+import html
 import os
 import sys
 
@@ -93,18 +94,18 @@ def generate_svg():
   </linearGradient>
 </defs>
 <style>
-  .card {{ opacity: 0; animation: slideIn 0.5s ease-out forwards; }}
+  .card {{ opacity: 0; animation: in 0.45s ease-out both; }}
   .pulse {{ animation: blink 2s infinite ease-in-out; }}
-  @keyframes slideIn {{
-    from {{ opacity: 0; transform: translateY(12px); }}
-    to {{ opacity: 1; transform: translateY(0); }}
+  @keyframes in {{
+    0% {{ opacity: 0; transform: translateY(14px); }}
+    100% {{ opacity: 1; transform: translateY(0); }}
   }}
   @keyframes blink {{
     0%, 100% {{ opacity: 0.35; }}
     50% {{ opacity: 1; }}
   }}
   @media (prefers-reduced-motion: reduce) {{
-    .card, .pulse {{ animation: none !important; opacity: 1 !important; }}
+    .card, .pulse {{ animation: none !important; opacity: 1 !important; transform: none !important; }}
   }}
 </style>
 
@@ -147,6 +148,10 @@ def generate_svg():
         cy = start_y + row * (card_h + gap_y)
         delay = delays[i]
 
+        title_esc = html.escape(c["title"])
+        badge_esc = html.escape(c["badge"])
+        badge_w = len(c["badge"]) * 6.5 + 14
+
         svg_parts.append(f'''
 <!-- Card {c["id"]} -->
 <g class="card" style="animation-delay: {delay}s;">
@@ -154,11 +159,11 @@ def generate_svg():
   
   <!-- Card Header -->
   <text x="{cx + 18}" y="{cy + 28}" fill="#7d8590" font-size="12" font-weight="700">[{c["id"]}]</text>
-  <text x="{cx + 46}" y="{cy + 28}" fill="#e6edf3" font-size="13" font-weight="700">{c["title"]}</text>
+  <text x="{cx + 46}" y="{cy + 28}" fill="#e6edf3" font-size="13" font-weight="700">{title_esc}</text>
   
   <!-- Badge Pill -->
-  <rect x="{cx + card_w - 18 - (len(c['badge']) * 6.5 + 14)}" y="{cy + 14}" width="{len(c['badge']) * 6.5 + 14}" height="20" rx="10" fill="{c['badge_bg']}" stroke="{c['badge_color']}" stroke-width="0.8"/>
-  <text x="{cx + card_w - 18 - ((len(c['badge']) * 6.5 + 14)/2)}" y="{cy + 28}" fill="{c['badge_color']}" font-size="9.5" font-weight="700" text-anchor="middle">{c['badge']}</text>
+  <rect x="{cx + card_w - 18 - badge_w}" y="{cy + 14}" width="{badge_w}" height="20" rx="10" fill="{c['badge_bg']}" stroke="{c['badge_color']}" stroke-width="0.8"/>
+  <text x="{cx + card_w - 18 - (badge_w / 2)}" y="{cy + 28}" fill="{c['badge_color']}" font-size="9.5" font-weight="700" text-anchor="middle">{badge_esc}</text>
 
   <line x1="{cx + 16}" y1="{cy + 42}" x2="{cx + card_w - 16}" y2="{cy + 42}" stroke="#21262d"/>
   
@@ -166,29 +171,35 @@ def generate_svg():
 ''')
         line_y = cy + 66
         for prefix, txt in c["lines"]:
-            svg_parts.append(f'''  <text x="{cx + 18}" y="{line_y}" fill="#39d353" font-size="12">{prefix}</text>
-  <text x="{cx + 48}" y="{line_y}" fill="#c9d1d9" font-size="12">{txt}</text>
+            prefix_esc = html.escape(prefix)
+            txt_esc = html.escape(txt)
+            svg_parts.append(f'''  <text x="{cx + 18}" y="{line_y}" fill="#39d353" font-size="12">{prefix_esc}</text>
+  <text x="{cx + 48}" y="{line_y}" fill="#c9d1d9" font-size="12">{txt_esc}</text>
 ''')
             line_y += 24
+
+        metric_label_esc = html.escape(c["metric_label"])
+        metric_val_esc = html.escape(c["metric_val"])
 
         # Metric Footer inside card
         svg_parts.append(f'''
   <!-- Card Footer -->
   <rect x="{cx + 16}" y="{cy + card_h - 32}" width="{card_w - 32}" height="22" rx="5" fill="#0d1117" stroke="#21262d"/>
-  <text x="{cx + 26}" y="{cy + card_h - 18}" fill="#7d8590" font-size="10">{c['metric_label']}:</text>
-  <text x="{cx + 115}" y="{cy + card_h - 18}" fill="#39d353" font-size="10" font-weight="700">{c['metric_val']}</text>
+  <text x="{cx + 26}" y="{cy + card_h - 18}" fill="#7d8590" font-size="10">{metric_label_esc}:</text>
+  <text x="{cx + 115}" y="{cy + card_h - 18}" fill="#39d353" font-size="10" font-weight="700">{metric_val_esc}</text>
   <text x="{cx + card_w - 26}" y="{cy + card_h - 18}" fill="#22d3ee" font-size="10" text-anchor="end">READY</text>
 </g>
 ''')
 
     # Bottom Terminal Prompt
+    mission = html.escape('"Blending design, AI, and code to empower human experiences."')
     svg_parts.append(f'''
 <!-- Bottom Mission Banner -->
 <g class="card" style="animation-delay: 0.55s;">
   <rect x="22" y="474" width="{W - 44}" height="36" rx="8" fill="#0b0e14" stroke="#30363d"/>
   <text x="36" y="496" fill="#39d353" font-size="11.5" font-weight="700">kaushal@github:~$</text>
   <text x="175" y="496" fill="#7d8590" font-size="11.5">echo $COMMUNITY_MISSION</text>
-  <text x="360" y="496" fill="#e6edf3" font-size="11.5">"Blending design, AI, and code to empower human experiences."</text>
+  <text x="360" y="496" fill="#e6edf3" font-size="11.5">{mission}</text>
   <circle cx="{W - 38}" cy="492" r="3" fill="#22d3ee" class="pulse"/>
 </g>
 
@@ -202,4 +213,3 @@ if __name__ == "__main__":
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(content)
     print(f"Generated {OUT} ({len(content)} bytes)")
-
