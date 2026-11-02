@@ -87,6 +87,10 @@ parts = [
     '@keyframes in{0%{opacity:0;transform:translateY(14px)}100%{opacity:1;transform:translateY(0)}}'
     f'.b{{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow {BAR_DUR}s ease-out both}}'
     '@keyframes grow{to{transform:scaleY(1)}}'
+    '@keyframes eq1{0%,100%{height:4px;y:14px}50%{height:18px;y:0px}}'
+    '@keyframes eq2{0%,100%{height:16px;y:2px}50%{height:6px;y:12px}}'
+    '@keyframes eq3{0%,100%{height:8px;y:10px}50%{height:20px;y:-2px}}'
+    '@keyframes eq4{0%,100%{height:19px;y:-1px}50%{height:7px;y:11px}}'
     '@media (prefers-reduced-motion: reduce){.t,.b{opacity:1!important;transform:none!important;animation:none!important}}'
     '</style>',
     f'<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
@@ -98,7 +102,16 @@ parts = [
 for i, dot in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
     parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dot}"/>')
 parts.append(f'<text x="{W/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
-             f'text-anchor="middle">kaushal@github: ~$ ./stats.sh</text>')
+             f'text-anchor="middle">kaushal@github: ~$ ./stats.sh --live</text>')
+parts.append('<g transform="translate(740, 15.0)"><circle cx="0" cy="0" r="3.5" fill="#39d353"/>'
+             '<circle cx="0" cy="0" r="3.5" fill="none" stroke="#39d353" stroke-width="1.5">'
+             '<animate attributeName="r" values="3.5;8;3.5" dur="2s" repeatCount="indefinite"/>'
+             '<animate attributeName="opacity" values="0.9;0;0.9" dur="2s" repeatCount="indefinite"/></circle>'
+             '<text x="10" y="3.5" fill="#39d353" font-size="10" font-weight="700" letter-spacing="1">ACTIVE</text></g>')
+parts.append('<path d="M 24 46 L 38 46 M 24 46 L 24 60" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.6"/>'
+             '<path d="M 816 46 L 802 46 M 816 46 L 816 60" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.6"/>'
+             '<path d="M 24 856 L 38 856 M 24 856 L 24 842" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.6"/>'
+             '<path d="M 816 856 L 802 856 M 816 856 L 816 842" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.6"/>')
 
 # ---- stat tiles ----------------------------------------------------------
 for i, (label, value, suffix, caption, accent) in enumerate(tiles):
@@ -112,6 +125,11 @@ for i, (label, value, suffix, caption, accent) in enumerate(tiles):
     parts.append(f'<rect x="{x:.1f}" y="{y}" width="{TILE_W:.1f}" height="{TILE_H}" rx="10" '
                  f'fill="{TILE}" stroke="{FRAME}"/>')
     parts.append(f'<text x="{x+24:.1f}" y="{y+40}" fill="{MUTED}" font-size="22">$ {label}</text>')
+    if i == 0:  # current streak radar indicator
+        parts.append(f'<circle cx="{x+TILE_W-40:.1f}" cy="{y+36}" r="4" fill="#39d353"/>'
+                     f'<circle cx="{x+TILE_W-40:.1f}" cy="{y+36}" r="4" fill="none" stroke="#39d353" stroke-width="1.5">'
+                     f'<animate attributeName="r" values="4;14;4" dur="2.4s" repeatCount="indefinite"/>'
+                     f'<animate attributeName="opacity" values="0.85;0;0.85" dur="2.4s" repeatCount="indefinite"/></circle>')
 
     # count-up frames: ease-out so it decelerates into the real number
     num_y = y + 100
@@ -139,6 +157,19 @@ parts.append(f'<g class="t" style="animation-delay:{BAR_START - 0.3:.2f}s">')
 parts.append(f'<rect x="{chart_x}" y="{CHART_TOP}" width="{chart_w}" height="{chart_h}" rx="10" '
              f'fill="{TILE}" stroke="{FRAME}"/>')
 parts.append(f'<text x="{chart_x+24}" y="{CHART_TOP+40}" fill="{MUTED}" font-size="22">$ contributions / month</text>')
+parts.append(f'<g transform="translate(640, 580)">'
+             f'<text x="-8" y="11" fill="{MUTED}" font-size="11" text-anchor="end">SYSTEM PULSE</text>'
+             f'<rect x="0" y="2" width="3.5" height="14" rx="1.5" fill="#38bdf8" style="animation:eq1 1.00s infinite ease-in-out"/>'
+             f'<rect x="6" y="2" width="3.5" height="14" rx="1.5" fill="#38bdf8" style="animation:eq2 1.25s infinite ease-in-out"/>'
+             f'<rect x="12" y="2" width="3.5" height="14" rx="1.5" fill="#38bdf8" style="animation:eq3 1.50s infinite ease-in-out"/>'
+             f'<rect x="18" y="2" width="3.5" height="14" rx="1.5" fill="#38bdf8" style="animation:eq4 1.75s infinite ease-in-out"/>'
+             f'<rect x="24" y="2" width="3.5" height="14" rx="1.5" fill="#38bdf8" style="animation:eq2 1.00s infinite ease-in-out"/>'
+             f'<rect x="30" y="2" width="3.5" height="14" rx="1.5" fill="#38bdf8" style="animation:eq1 1.25s infinite ease-in-out"/>'
+             f'<rect x="36" y="2" width="3.5" height="14" rx="1.5" fill="#38bdf8" style="animation:eq4 1.50s infinite ease-in-out"/>'
+             f'<rect x="42" y="2" width="3.5" height="14" rx="1.5" fill="#38bdf8" style="animation:eq3 1.75s infinite ease-in-out"/>'
+             f'<rect x="48" y="2" width="3.5" height="14" rx="1.5" fill="#38bdf8" style="animation:eq2 1.00s infinite ease-in-out"/>'
+             f'<rect x="54" y="2" width="3.5" height="14" rx="1.5" fill="#38bdf8" style="animation:eq1 1.25s infinite ease-in-out"/>'
+             f'</g>')
 parts.append('</g>')
 
 plot_top = CHART_TOP + 64

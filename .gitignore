@@ -1,0 +1,6 @@
+.DS_Store
+*.code-workspace
+__pycache__/
+*.pyc
+.venv/
+env/

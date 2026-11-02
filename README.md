@@ -17,7 +17,7 @@
 
 <p>
   <b>Kaushal Maran</b><br>
-  <sub>Software Developer · Mobile &amp; Web Builder · Tech Enthusiast</sub>
+  <sub>Mobile Application Developer · iOS (SwiftUI) &amp; Android (Compose) · Tech Enthusiast</sub>
 </p>
 
 <!-- ascii portrait (left) + streak/numbers card (right). both svgs are 840x880 -->
@@ -35,18 +35,29 @@
 <br>
 
 <!-- ============================================================= -->
-<!-- 02. CORE ARCHITECTURE & FOCUS: building-blocks.sh             -->
+<!-- 02. DEV SYSTEM TELEMETRY & DEPLOYMENT LOGS                    -->
 <!-- ============================================================= -->
-<h3><code>kaushal@github ~ $ ./building-blocks.sh</code></h3>
+<h3><code>kaushal@github ~ $ ./dev_system.sh --telemetry</code></h3>
 
 <p align="center">
-  <img src="./building-blocks.svg" width="860" alt="Kaushal's Creative Community & System Building Blocks" />
+  <img src="./dev-system.svg" width="860" alt="Kaushal's Dev System Telemetry &amp; Deployment Logs" />
 </p>
 
 <br>
 
 <!-- ============================================================= -->
-<!-- 03. RETRO ARCADE: arcade.sh                                   -->
+<!-- 03. CORE ARCHITECTURE & FOCUS: building-blocks.sh             -->
+<!-- ============================================================= -->
+<h3><code>kaushal@github ~ $ ./building-blocks.sh</code></h3>
+
+<p align="center">
+  <img src="./building-blocks.svg" width="860" alt="Kaushal's Creative Community &amp; System Building Blocks" />
+</p>
+
+<br>
+
+<!-- ============================================================= -->
+<!-- 04. RETRO ARCADE: arcade.sh                                   -->
 <!-- ============================================================= -->
 <h3><code>kaushal@github ~ $ ./arcade.sh --play-pacman</code></h3>
 
@@ -65,23 +76,23 @@
 <br>
 
 <!-- ============================================================= -->
-<!-- 04. TECH STACK & TOOLS: skills.sh                             -->
+<!-- 05. TECH STACK & TOOLS: skills.sh                             -->
 <!-- ============================================================= -->
 <h3><code>kaushal@github ~ $ ./skills.sh</code></h3>
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=python,swift,flutter,androidstudio,fastapi,docker,git,github,firebase,mysql,postgres,tailwind,js,c,blender,figma&theme=dark&perline=8" alt="Kaushal's Tech Stack" />
+  <img src="https://skillicons.dev/icons?i=swift,apple,kotlin,androidstudio,figma,flutter,python,fastapi,docker,git,github,firebase,mysql,postgres,tailwind,js,c,blender&theme=dark&perline=9" alt="Kaushal's Tech Stack" />
 </div>
 
 <br>
 
 <!-- ============================================================= -->
-<!-- 05. CONNECT & SOCIAL LINKS: connect.sh                        -->
+<!-- 06. CONNECT & SOCIAL LINKS: connect.sh                        -->
 <!-- ============================================================= -->
 <h3><code>kaushal@github ~ $ ./connect.sh</code></h3>
 
 <p>
-  <i>Let's build something impactful together — open for mobile engineering, AI systems &amp; creative collaborations.</i>
+  <i>Let's build something impactful together — open for mobile engineering, systems &amp; creative collaborations.</i>
 </p>
 
 <p align="center">
