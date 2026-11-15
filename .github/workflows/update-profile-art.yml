@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || github.token }}
 
       - uses: actions/setup-python@v5
         with:
@@ -35,8 +37,8 @@ jobs:
       - name: Render streak / numbers card
         run: python scripts/render_stats_svg.py
 
-      - name: Render building blocks card
-        run: python scripts/render_blocks_svg.py
+#      - name: Render building blocks card
+#        run: python scripts/render_blocks_svg.py
 
       - name: Render dev system telemetry card
         run: python scripts/render_dev_system_svg.py
@@ -45,4 +47,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh profile art [skip ci]"
-          file_pattern: "data/contributions.json contrib-heatmap.svg stats.svg building-blocks.svg dev-system.svg"
+          file_pattern: "data/contributions.json contrib-heatmap.svg stats.svg dev-system.svg"
+          commit_user_name: "kaushalboii"
+          commit_user_email: "124547139+kaushalboii@users.noreply.github.com"
+          commit_author: "kaushalboii <124547139+kaushalboii@users.noreply.github.com>"

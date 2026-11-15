@@ -46,8 +46,9 @@
 <br>
 
 <!-- ============================================================= -->
-<!-- 03. CORE ARCHITECTURE & FOCUS: building-blocks.sh             -->
+<!-- 03. CORE ARCHITECTURE & FOCUS: building-blocks.sh (Disabled)  -->
 <!-- ============================================================= -->
+<!--
 <h3><code>kaushal@github ~ $ ./building-blocks.sh</code></h3>
 
 <p align="center">
@@ -55,6 +56,7 @@
 </p>
 
 <br>
+-->
 
 <!-- ============================================================= -->
 <!-- 04. RETRO ARCADE: arcade.sh                                   -->
