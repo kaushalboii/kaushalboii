@@ -99,7 +99,7 @@
 <h3><code>kaushal@github ~ $ ./skills.sh</code></h3>
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=swift,apple,kotlin,androidstudio,figma,flutter,python,fastapi,docker,git,github,firebase,mysql,postgres,tailwind,js,c,blender&theme=dark&perline=9" alt="Kaushal's Tech Stack" />
+  <img src="https://skillicons.dev/icons?i=swift,apple,kotlin,androidstudio,flutter,dart,python,ts,js,html,css,c,cpp,cs,java,react,nextjs,threejs,tailwind,nodejs,express,fastapi,postgres,mysql,mongodb,redis,firebase,docker,bash,git,github,figma,blender&theme=dark&perline=11" alt="Kaushal's Tech Stack" />
 </div>
 
 <br>
