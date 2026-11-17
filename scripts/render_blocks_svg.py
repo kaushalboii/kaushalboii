@@ -1,21 +1,20 @@
 #!/usr/bin/env python3
 """
 Render Kaushal's Creative Community & System Building Blocks as a terminal-window SVG.
-Matches the design specs of stats.svg, contrib-heatmap.svg, and kaushal-ascii.svg.
-
-Canvas: 860 x 530
-Palette: #0d1117 (bg), #111722 (bg2), #161b22 (tile), #30363d (frame),
-         #7d8590 (muted), #e6edf3 (ink), #39d353 (terminal green), #22d3ee (cyan)
+Supports both dark mode (building-blocks.svg with adaptive CSS) and light mode
+(building-blocks-light.svg).
 
 Usage:
     python scripts/render_blocks_svg.py [output.svg]
+    If no args provided, automatically renders both building-blocks.svg and building-blocks-light.svg.
 """
 import html
 import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "building-blocks.svg")
+DEFAULT_DARK_OUT = os.path.join(HERE, "..", "building-blocks.svg")
+DEFAULT_LIGHT_OUT = os.path.join(HERE, "..", "building-blocks-light.svg")
 
 W, H = 860, 530
 
@@ -25,7 +24,7 @@ CARDS = [
         "title": "MOBILE ARCHITECTURE",
         "badge": "SWIFTUI · FLUTTER · KOTLIN",
         "badge_color": "#22d3ee",
-        "badge_bg": "rgba(34, 211, 238, 0.12)",
+        "badge_color_light": "#0969da",
         "lines": [
             ("├──", "SwiftUI Native & Jetpack Compose"),
             ("├──", "Kinetic Motion & Micro-Interactions"),
@@ -39,7 +38,7 @@ CARDS = [
         "title": "INTELLIGENT AGENTS",
         "badge": "PYTHON · AGENTS · FASTAPI",
         "badge_color": "#39d353",
-        "badge_bg": "rgba(57, 211, 83, 0.12)",
+        "badge_color_light": "#1a7f37",
         "lines": [
             ("├──", "Autonomous LLM Workflow Loops"),
             ("├──", "Dynamic SVG & Canvas Generators"),
@@ -53,7 +52,7 @@ CARDS = [
         "title": "FULL-STACK & SYSTEMS",
         "badge": "NODE · DOCKER · POSTGRES",
         "badge_color": "#22d3ee",
-        "badge_bg": "rgba(34, 211, 238, 0.12)",
+        "badge_color_light": "#0969da",
         "lines": [
             ("├──", "High-Throughput Microservices"),
             ("├──", "PostgreSQL & Redis Event Streams"),
@@ -67,7 +66,7 @@ CARDS = [
         "title": "CREATIVE COMMUNITY LAB",
         "badge": "OPEN SOURCE · COLLAB",
         "badge_color": "#f2cc60",
-        "badge_bg": "rgba(242, 204, 96, 0.12)",
+        "badge_color_light": "#b45309",
         "lines": [
             ("├──", "Modular UI Kits & Interactive Specs"),
             ("├──", "Storytelling through Code & Motion"),
@@ -78,22 +77,53 @@ CARDS = [
     }
 ]
 
-def generate_svg():
+
+def generate_svg(theme="dark"):
+    is_light = (theme == "light")
+    scheme = "light" if is_light else "light dark"
+
+    if is_light:
+        bg1, bg2 = "#ffffff", "#f6f8fa"
+        card1, card2 = "#ffffff", "#f6f8fa"
+        frame_col = "#d0d7de"
+        muted_col = "#57606a"
+        ink_col = "#1f2328"
+        cyan_col = "#0969da"
+        green_col = "#1a7f37"
+    else:
+        bg1, bg2 = "#111722", "#0d1117"
+        card1, card2 = "#19202c", "#131922"
+        frame_col = "#30363d"
+        muted_col = "#7d8590"
+        ink_col = "#e6edf3"
+        cyan_col = "#22d3ee"
+        green_col = "#39d353"
+
     svg_parts = []
-    
-    # Header & Styles
-    svg_parts.append(f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    svg_parts.append(f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" style="color-scheme: {scheme};" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#111722"/>
-    <stop offset="100%" stop-color="#0d1117"/>
+    <stop offset="0%" stop-color="{bg1}"/>
+    <stop offset="100%" stop-color="{bg2}"/>
   </linearGradient>
   <linearGradient id="card-grad" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#19202c"/>
-    <stop offset="100%" stop-color="#131922"/>
+    <stop offset="0%" stop-color="{card1}"/>
+    <stop offset="100%" stop-color="{card2}"/>
+  </linearGradient>''')
+
+    if not is_light:
+        svg_parts.append('''  <linearGradient id="bg-light" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="100%" stop-color="#f6f8fa"/>
   </linearGradient>
-</defs>
+  <linearGradient id="card-grad-light" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="100%" stop-color="#f6f8fa"/>
+  </linearGradient>''')
+
+    svg_parts.append(f'''</defs>
 <style>
+  :root {{ color-scheme: {scheme}; }}
   .card {{ opacity: 0; animation: in 0.45s ease-out both; }}
   .pulse {{ animation: blink 2s infinite ease-in-out; }}
   @keyframes in {{
@@ -106,110 +136,136 @@ def generate_svg():
   }}
   @media (prefers-reduced-motion: reduce) {{
     .card, .pulse {{ animation: none !important; opacity: 1 !important; transform: none !important; }}
-  }}
-</style>
+  }}''')
+
+    if not is_light:
+        svg_parts.append('''  @media (prefers-color-scheme: light) {
+    .win-bg { fill: url(#bg-light) !important; }
+    .frame-col { stroke: #d0d7de !important; }
+    .card-grad-fill { fill: url(#card-grad-light) !important; stroke: #d0d7de !important; }
+    .txt-muted { fill: #57606a !important; }
+    .txt-ink, .txt-muted .txt-ink { fill: #1f2328 !important; }
+    .hud-cyan { stroke: #0969da !important; }
+    .bracket-cyan { fill: #0969da !important; }
+    .dot-fill { fill: #1a7f37 !important; }
+    .txt-green { fill: #1a7f37 !important; }
+    .badge-box-0 { fill: #0969da1a !important; }
+    .badge-txt-0 { fill: #0969da !important; }
+    .badge-box-1 { fill: #1a7f371a !important; }
+    .badge-txt-1 { fill: #1a7f37 !important; }
+    .badge-box-2 { fill: #8250df1a !important; }
+    .badge-txt-2 { fill: #8250df !important; }
+    .badge-box-3 { fill: #b453091a !important; }
+    .badge-txt-3 { fill: #b45309 !important; }
+    .metric-val-0 { fill: #0969da !important; }
+    .metric-val-1 { fill: #1a7f37 !important; }
+    .metric-val-2 { fill: #8250df !important; }
+    .metric-val-3 { fill: #b45309 !important; }
+  }''')
+
+    svg_parts.append(f'''</style>
 
 <!-- Terminal Window Background -->
-<rect width="{W}" height="{H}" rx="12" fill="url(#bg)"/>
-<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="12" fill="none" stroke="#30363d" stroke-width="1"/>
+<rect class="win-bg" width="{W}" height="{H}" rx="12" fill="url(#bg)"/>
+<rect class="frame-col" x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="12" fill="none" stroke="{frame_col}" stroke-width="1"/>
 
 <!-- Titlebar -->
-<line x1="0" y1="32" x2="{W}" y2="32" stroke="#30363d"/>
+<line class="frame-col" x1="0" y1="32" x2="{W}" y2="32" stroke="{frame_col}"/>
 <circle cx="20" cy="16" r="5" fill="#ff5f56"/>
 <circle cx="36" cy="16" r="5" fill="#ffbd2e"/>
 <circle cx="52" cy="16" r="5" fill="#27c93f"/>
-<text x="{W/2}" y="20" fill="#7d8590" font-size="12" text-anchor="middle">kaushal@github: ~$ ./building-blocks.sh --status=active</text>
 
-<!-- Sub-header status ribbon -->
-<g class="card" style="animation-delay: 0.05s;">
-  <circle cx="26" cy="53" r="4" fill="#39d353" class="pulse"/>
-  <text x="36" y="57" fill="#39d353" font-size="11" font-weight="700">SYSTEM: ACTIVE</text>
-  <text x="160" y="57" fill="#7d8590" font-size="11">● NODES: 4/4 INITIALIZED</text>
-  <text x="340" y="57" fill="#7d8590" font-size="11">● ECOSYSTEM: CREATIVE COMMUNITY LABS</text>
-  <text x="{W-24}" y="57" fill="#22d3ee" font-size="11" text-anchor="end">BUILD VERSION: 2026.11</text>
-  <line x1="20" y1="68" x2="{W-20}" y2="68" stroke="#21262d" stroke-dasharray="3,3"/>
+<!-- Terminal Command Title -->
+<text class="txt-muted" x="{W/2}" y="21" fill="{muted_col}" font-size="12" text-anchor="middle">kaushal@dev-station: ~$ ./building-blocks.sh --status=active</text>
+
+<!-- Top Right System Status Pulse -->
+<g transform="translate({W - 135}, 16)">
+  <circle cx="0" cy="0" r="4" fill="{green_col}" class="dot-fill pulse"/>
+  <circle cx="0" cy="0" r="2" fill="{green_col}" class="dot-fill"/>
+  <text class="txt-green" x="10" y="3.5" fill="{green_col}" font-size="10" font-weight="700" letter-spacing="1">SYSTEM OK</text>
 </g>
+
+<!-- Tech Crosshairs / HUD brackets -->
+<path class="hud-cyan" d="M 22 46 L 34 46 M 22 46 L 22 58" stroke="{cyan_col}" stroke-width="1.5" fill="none" opacity="0.6"/>
+<path class="hud-cyan" d="M {W-22} 46 L {W-34} 46 M {W-22} 46 L {W-22} 58" stroke="{cyan_col}" stroke-width="1.5" fill="none" opacity="0.6"/>
+<path class="hud-cyan" d="M 22 {H-22} L 34 {H-22} M 22 {H-22} L 22 {H-34}" stroke="{cyan_col}" stroke-width="1.5" fill="none" opacity="0.6"/>
+<path class="hud-cyan" d="M {W-22} {H-22} L {W-34} {H-22} M {W-22} {H-22} L {W-22} {H-34}" stroke="{cyan_col}" stroke-width="1.5" fill="none" opacity="0.6"/>
 ''')
 
-    # Render Cards (2 x 2 grid)
-    card_w = 398
-    card_h = 178
-    start_x = 22
-    start_y = 80
-    gap_x = 20
-    gap_y = 16
+    # Card Grid layout: 2 cols x 2 rows
+    COLS, ROWS_COUNT = 2, 2
+    PAD_X, PAD_Y = 22, 50
+    GAP_X, GAP_Y = 16, 16
+    CARD_W = (W - PAD_X * 2 - GAP_X * (COLS - 1)) / COLS
+    CARD_H = (H - PAD_Y - 24 - GAP_Y * (ROWS_COUNT - 1)) / ROWS_COUNT
 
-    delays = [0.15, 0.25, 0.35, 0.45]
+    delays = [0.08, 0.20, 0.32, 0.44]
 
     for i, c in enumerate(CARDS):
-        col = i % 2
-        row = i // 2
-        cx = start_x + col * (card_w + gap_x)
-        cy = start_y + row * (card_h + gap_y)
+        row = i // COLS
+        col = i % COLS
+        x = PAD_X + col * (CARD_W + GAP_X)
+        y = PAD_Y + row * (CARD_H + GAP_Y)
         delay = delays[i]
-
-        title_esc = html.escape(c["title"])
-        badge_esc = html.escape(c["badge"])
-        badge_w = len(c["badge"]) * 6.5 + 14
+        badge_c = c["badge_color_light"] if is_light else c["badge_color"]
+        badge_bg = f"{badge_c}1a"
 
         svg_parts.append(f'''
 <!-- Card {c["id"]} -->
-<g class="card" style="animation-delay: {delay}s;">
-  <rect x="{cx}" y="{cy}" width="{card_w}" height="{card_h}" rx="10" fill="url(#card-grad)" stroke="#30363d" stroke-width="1"/>
+<g class="card" style="animation-delay: {delay}s">
+  <rect class="card-grad-fill" x="{x}" y="{y}" width="{CARD_W}" height="{CARD_H}" rx="8" fill="url(#card-grad)" stroke="{frame_col}" stroke-width="1"/>
   
-  <!-- Card Header -->
-  <text x="{cx + 18}" y="{cy + 28}" fill="#7d8590" font-size="12" font-weight="700">[{c["id"]}]</text>
-  <text x="{cx + 46}" y="{cy + 28}" fill="#e6edf3" font-size="13" font-weight="700">{title_esc}</text>
+  <!-- Index Number -->
+  <text class="bracket-cyan" x="{x + 18}" y="{y + 32}" fill="{cyan_col}" font-size="12" font-weight="700">[{c["id"]}]</text>
   
-  <!-- Badge Pill -->
-  <rect x="{cx + card_w - 18 - badge_w}" y="{cy + 14}" width="{badge_w}" height="20" rx="10" fill="{c['badge_bg']}" stroke="{c['badge_color']}" stroke-width="0.8"/>
-  <text x="{cx + card_w - 18 - (badge_w / 2)}" y="{cy + 28}" fill="{c['badge_color']}" font-size="9.5" font-weight="700" text-anchor="middle">{badge_esc}</text>
+  <!-- Card Title -->
+  <text class="txt-ink" x="{x + 46}" y="{y + 32}" fill="{ink_col}" font-size="13" font-weight="700" letter-spacing="1">{html.escape(c["title"])}</text>
+  
+  <!-- Stack / Tech Badge -->
+  <rect class="badge-box-{i}" x="{x + CARD_W - 170}" y="{y + 18}" width="154" height="20" rx="4" fill="{badge_bg}"/>
+  <text class="badge-txt-{i}" x="{x + CARD_W - 93}" y="{y + 32}" fill="{badge_c}" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="0.5">{c["badge"]}</text>
 
-  <line x1="{cx + 16}" y1="{cy + 42}" x2="{cx + card_w - 16}" y2="{cy + 42}" stroke="#21262d"/>
-  
-  <!-- Tree Lines -->
+  <!-- Divider Line -->
+  <line class="frame-col" x1="{x + 16}" y1="{y + 46}" x2="{x + CARD_W - 16}" y2="{y + 46}" stroke="{frame_col}" stroke-width="1" stroke-dasharray="3,3"/>
 ''')
-        line_y = cy + 66
-        for prefix, txt in c["lines"]:
-            prefix_esc = html.escape(prefix)
-            txt_esc = html.escape(txt)
-            svg_parts.append(f'''  <text x="{cx + 18}" y="{line_y}" fill="#39d353" font-size="12">{prefix_esc}</text>
-  <text x="{cx + 48}" y="{line_y}" fill="#c9d1d9" font-size="12">{txt_esc}</text>
-''')
-            line_y += 24
+        # Content lines
+        for line_idx, (tree_sym, text) in enumerate(c["lines"]):
+            ly = y + 74 + line_idx * 25
+            svg_parts.append(f'''  <text class="txt-muted" x="{x + 18}" y="{ly}" fill="{muted_col}" font-size="11">{tree_sym} <tspan class="txt-ink" fill="{ink_col}">{html.escape(text)}</tspan></text>''')
 
-        metric_label_esc = html.escape(c["metric_label"])
-        metric_val_esc = html.escape(c["metric_val"])
-
-        # Metric Footer inside card
+        # Card Footer Metric
         svg_parts.append(f'''
   <!-- Card Footer -->
-  <rect x="{cx + 16}" y="{cy + card_h - 32}" width="{card_w - 32}" height="22" rx="5" fill="#0d1117" stroke="#21262d"/>
-  <text x="{cx + 26}" y="{cy + card_h - 18}" fill="#7d8590" font-size="10">{metric_label_esc}:</text>
-  <text x="{cx + 115}" y="{cy + card_h - 18}" fill="#39d353" font-size="10" font-weight="700">{metric_val_esc}</text>
-  <text x="{cx + card_w - 26}" y="{cy + card_h - 18}" fill="#22d3ee" font-size="10" text-anchor="end">READY</text>
+  <line class="frame-col" x1="{x + 16}" y1="{y + CARD_H - 34}" x2="{x + CARD_W - 16}" y2="{y + CARD_H - 34}" stroke="{frame_col}" stroke-width="1"/>
+  <text class="txt-muted" x="{x + 18}" y="{y + CARD_H - 16}" fill="{muted_col}" font-size="9" font-weight="700" letter-spacing="1">METRIC // {c["metric_label"]}:</text>
+  <text class="metric-val-{i}" x="{x + CARD_W - 18}" y="{y + CARD_H - 16}" fill="{badge_c}" font-size="10" font-weight="700" text-anchor="end">{html.escape(c["metric_val"])}</text>
 </g>
 ''')
 
-    # Bottom Terminal Prompt
-    mission = html.escape('"Blending design, AI, and code to empower human experiences."')
-    svg_parts.append(f'''
-<!-- Bottom Mission Banner -->
-<g class="card" style="animation-delay: 0.55s;">
-  <rect x="22" y="474" width="{W - 44}" height="36" rx="8" fill="#0b0e14" stroke="#30363d"/>
-  <text x="36" y="496" fill="#39d353" font-size="11.5" font-weight="700">kaushal@github:~$</text>
-  <text x="175" y="496" fill="#7d8590" font-size="11.5">echo $COMMUNITY_MISSION</text>
-  <text x="360" y="496" fill="#e6edf3" font-size="11.5">{mission}</text>
-  <circle cx="{W - 38}" cy="492" r="3" fill="#22d3ee" class="pulse"/>
-</g>
+    svg_parts.append("</svg>")
+    return "\n".join(svg_parts)
 
-</svg>
-''')
 
-    return "".join(svg_parts)
+def main():
+    custom_out = sys.argv[1] if len(sys.argv) > 1 else None
+
+    if custom_out:
+        theme = "light" if "light" in custom_out.lower() else "dark"
+        svg = generate_svg(theme=theme)
+        with open(custom_out, "w") as f:
+            f.write(svg)
+        print(f"wrote {custom_out}: {W} x {H}, {len(svg)} bytes ({theme} mode)")
+    else:
+        dark_svg = generate_svg(theme="dark")
+        with open(DEFAULT_DARK_OUT, "w") as f:
+            f.write(dark_svg)
+        print(f"wrote {DEFAULT_DARK_OUT}: {W} x {H}, {len(dark_svg)} bytes (dark mode + adaptive CSS)")
+
+        light_svg = generate_svg(theme="light")
+        with open(DEFAULT_LIGHT_OUT, "w") as f:
+            f.write(light_svg)
+        print(f"wrote {DEFAULT_LIGHT_OUT}: {W} x {H}, {len(light_svg)} bytes (light mode)")
+
 
 if __name__ == "__main__":
-    content = generate_svg()
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write(content)
-    print(f"Generated {OUT} ({len(content)} bytes)")
+    main()

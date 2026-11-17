@@ -69,8 +69,9 @@ for i, c in enumerate(contribs):
         f'fill="{COLORS[lvl]}" style="animation-delay:{delay}s"/>'
     )
 
-svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" style="color-scheme: light dark;" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
 <style>
+  :root {{ color-scheme: light dark; }}
   text.lbl {{ fill:{GRAY}; font-size:13px; font-weight:600; }}
   text.total {{ fill:#e6edf3; font-size:15px; font-weight:700; }}
   .c {{ transform-box:fill-box; transform-origin:center; opacity:0; animation:pop {DUR}s ease-out both; }}
@@ -78,6 +79,11 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
   @keyframes pop {{ 0%{{opacity:0;transform:scale(.2)}} 60%{{opacity:1;transform:scale(1.1)}} 100%{{opacity:1;transform:scale(1)}} }}
   @keyframes flash {{ 0%{{filter:brightness(2.4)}} 45%{{filter:brightness(2.4)}} 100%{{filter:brightness(1)}} }}
   @media (prefers-reduced-motion: reduce) {{ .c {{ opacity:1 !important; animation:none !important; }} }}
+  @media (prefers-color-scheme: light) {{
+    text.lbl {{ fill: #57606a !important; }}
+    text.total {{ fill: #1f2328 !important; }}
+    .e {{ fill: #ebedf0 !important; }}
+  }}
 </style>
 <rect width="{W}" height="{H}" fill="none"/>
 {''.join(labels)}

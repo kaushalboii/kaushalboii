@@ -47,7 +47,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh profile art [skip ci]"
-          file_pattern: "data/contributions.json contrib-heatmap.svg stats.svg dev-system.svg"
+          file_pattern: "data/contributions.json contrib-heatmap.svg stats.svg stats-light.svg dev-system.svg dev-system-light.svg kaushal-ascii.svg kaushal-ascii-light.svg building-blocks.svg building-blocks-light.svg"
           commit_user_name: "kaushalboii"
           commit_user_email: "124547139+kaushalboii@users.noreply.github.com"
           commit_author: "kaushalboii <124547139+kaushalboii@users.noreply.github.com>"

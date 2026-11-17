@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="888" height="158" viewBox="0 0 888 158" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="888" height="158" viewBox="0 0 888 158" style="color-scheme: light dark;" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
 <style>
+  :root { color-scheme: light dark; }
   text.lbl { fill:#7d8590; font-size:13px; font-weight:600; }
   text.total { fill:#e6edf3; font-size:15px; font-weight:700; }
   .c { transform-box:fill-box; transform-origin:center; opacity:0; animation:pop 0.55s ease-out both; }
@@ -7,6 +8,11 @@
   @keyframes pop { 0%{opacity:0;transform:scale(.2)} 60%{opacity:1;transform:scale(1.1)} 100%{opacity:1;transform:scale(1)} }
   @keyframes flash { 0%{filter:brightness(2.4)} 45%{filter:brightness(2.4)} 100%{filter:brightness(1)} }
   @media (prefers-reduced-motion: reduce) { .c { opacity:1 !important; animation:none !important; } }
+  @media (prefers-color-scheme: light) {
+    text.lbl { fill: #57606a !important; }
+    text.total { fill: #1f2328 !important; }
+    .e { fill: #ebedf0 !important; }
+  }
 </style>
 <rect width="888" height="158" fill="none"/>
 <text class="lbl" x="34" y="16">Nov</text><text class="lbl" x="82" y="16">Dec</text><text class="lbl" x="146" y="16">Jan</text><text class="lbl" x="210" y="16">Feb</text><text class="lbl" x="274" y="16">Mar</text><text class="lbl" x="354" y="16">Apr</text><text class="lbl" x="418" y="16">May</text><text class="lbl" x="498" y="16">Jun</text><text class="lbl" x="562" y="16">Jul</text><text class="lbl" x="626" y="16">Aug</text><text class="lbl" x="706" y="16">Sep</text><text class="lbl" x="770" y="16">Oct</text><text class="lbl" x="834" y="16">Nov</text><text class="lbl" x="2" y="51">Mon</text><text class="lbl" x="2" y="83">Wed</text><text class="lbl" x="2" y="115">Fri</text>

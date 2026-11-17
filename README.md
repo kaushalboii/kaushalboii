@@ -24,10 +24,18 @@
 <table align="center">
   <tr>
     <td valign="top">
-      <img src="./kaushal-ascii.svg" width="420" alt="Kaushal Maran — ASCII portrait" />
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./kaushal-ascii.svg">
+        <source media="(prefers-color-scheme: light)" srcset="./kaushal-ascii-light.svg">
+        <img src="./kaushal-ascii-light.svg" width="420" alt="Kaushal Maran — ASCII portrait" />
+      </picture>
     </td>
     <td valign="top">
-      <img src="./stats.svg" width="420" alt="Kaushal's GitHub streak and contribution stats — auto-refreshed daily" />
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./stats.svg">
+        <source media="(prefers-color-scheme: light)" srcset="./stats-light.svg">
+        <img src="./stats-light.svg" width="420" alt="Kaushal's GitHub streak and contribution stats — auto-refreshed daily" />
+      </picture>
     </td>
   </tr>
 </table>
@@ -40,7 +48,11 @@
 <h3><code>kaushal@github ~ $ ./dev_system.sh --telemetry</code></h3>
 
 <p align="center">
-  <img src="./dev-system.svg" width="860" alt="Kaushal's Dev System Telemetry &amp; Deployment Logs" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./dev-system.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./dev-system-light.svg">
+    <img src="./dev-system-light.svg" width="860" alt="Kaushal's Dev System Telemetry &amp; Deployment Logs" />
+  </picture>
 </p>
 
 <br>
@@ -52,7 +64,11 @@
 <h3><code>kaushal@github ~ $ ./building-blocks.sh</code></h3>
 
 <p align="center">
-  <img src="./building-blocks.svg" width="860" alt="Kaushal's Creative Community &amp; System Building Blocks" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./building-blocks.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./building-blocks-light.svg">
+    <img src="./building-blocks-light.svg" width="860" alt="Kaushal's Creative Community &amp; System Building Blocks" />
+  </picture>
 </p>
 
 <br>
@@ -71,7 +87,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kaushalboii/kaushalboii/output/pacman-contribution-graph-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kaushalboii/kaushalboii/output/pacman-contribution-graph.svg">
-    <img src="https://raw.githubusercontent.com/kaushalboii/kaushalboii/output/pacman-contribution-graph-dark.svg" width="860" style="border-radius: 12px; border: 1px solid #30363d;" alt="Kaushal's Live Pac-Man Contribution Arcade Game" />
+    <img src="https://raw.githubusercontent.com/kaushalboii/kaushalboii/output/pacman-contribution-graph.svg" width="860" style="border-radius: 12px;" alt="Kaushal's Live Pac-Man Contribution Arcade Game" />
   </picture>
 </p>
 
@@ -83,7 +99,11 @@
 <h3><code>kaushal@github ~ $ ./skills.sh</code></h3>
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=swift,apple,kotlin,androidstudio,figma,flutter,python,fastapi,docker,git,github,firebase,mysql,postgres,tailwind,js,c,blender&theme=dark&perline=9" alt="Kaushal's Tech Stack" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=swift,apple,kotlin,androidstudio,figma,flutter,python,fastapi,docker,git,github,firebase,mysql,postgres,tailwind,js,c,blender&theme=dark&perline=9">
+    <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=swift,apple,kotlin,androidstudio,figma,flutter,python,fastapi,docker,git,github,firebase,mysql,postgres,tailwind,js,c,blender&theme=light&perline=9">
+    <img src="https://skillicons.dev/icons?i=swift,apple,kotlin,androidstudio,figma,flutter,python,fastapi,docker,git,github,firebase,mysql,postgres,tailwind,js,c,blender&theme=light&perline=9" alt="Kaushal's Tech Stack" />
+  </picture>
 </div>
 
 <br>
