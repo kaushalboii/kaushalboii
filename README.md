@@ -99,11 +99,7 @@
 <h3><code>kaushal@github ~ $ ./skills.sh</code></h3>
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=swift,apple,kotlin,androidstudio,figma,flutter,python,fastapi,docker,git,github,firebase,mysql,postgres,tailwind,js,c,blender&theme=dark&perline=9">
-    <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=swift,apple,kotlin,androidstudio,figma,flutter,python,fastapi,docker,git,github,firebase,mysql,postgres,tailwind,js,c,blender&theme=light&perline=9">
-    <img src="https://skillicons.dev/icons?i=swift,apple,kotlin,androidstudio,figma,flutter,python,fastapi,docker,git,github,firebase,mysql,postgres,tailwind,js,c,blender&theme=light&perline=9" alt="Kaushal's Tech Stack" />
-  </picture>
+  <img src="https://skillicons.dev/icons?i=swift,apple,kotlin,androidstudio,figma,flutter,python,fastapi,docker,git,github,firebase,mysql,postgres,tailwind,js,c,blender&theme=dark&perline=9" alt="Kaushal's Tech Stack" />
 </div>
 
 <br>
